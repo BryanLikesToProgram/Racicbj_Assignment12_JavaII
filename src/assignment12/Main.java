@@ -1,35 +1,35 @@
+//Bryan Racic
+//4/19/16
+//1045C
+//
 package assignment12;
 
 public class Main {
 	public static void main(String[] args) {
+		
 		Class01 class01 = new Class01();
-		String numberString;
 		int digit01 = 0;
 		int digit02 = 0;
 		int digit03 = 0;
 		int digit04 = 0;
-		
-		int number = 0;
-		int finalNumber = 0;
-		
-		for (int i = 1000; i < 10000; i++){
-			numberString = new Integer(i).toString();
-			digit01 = Character.getNumericValue(numberString.charAt(0));
-			digit02 = Character.getNumericValue(numberString.charAt(1));
-			digit03 = Character.getNumericValue(numberString.charAt(2));
-			digit04 = Character.getNumericValue(numberString.charAt(3));
+		int digit05 = 0;
+		int digit06 = 0;
+		int testNum = 0;
+		int finalNum = 0;
+		for (int i = 2; i < 1000000;i++){
+			digit01 = i - ((i / 10) * 10);
+			digit02 = (i / 10) % 10;
+			digit03 = ((i / 10) / 10) % 10;
+			digit04 = (((i / 10) / 10) / 10) % 10;
+			digit05 = ((((i / 10) / 10) / 10) /10) % 10;
+			digit06 = (((((i / 10) / 10) / 10) /10) / 10) % 10;
+
+			testNum = class01.toTheFifth(digit01) + class01.toTheFifth(digit02) + class01.toTheFifth(digit03) + class01.toTheFifth(digit04) + class01.toTheFifth(digit05) + class01.toTheFifth(digit06);
 			
-			digit01 = class01.toTheFourth(digit01);
-			digit02 = class01.toTheFourth(digit02);
-			digit03 = class01.toTheFourth(digit03);
-			digit04 = class01.toTheFourth(digit04);
-			
-			number = digit01 + digit02 + digit03 + digit04;
-			if (Integer.parseInt(numberString) == number){
-				System.out.println(numberString);
-				finalNumber = finalNumber + number;
+			if (i == testNum){
+				finalNum = finalNum + testNum;
 			}
 		}
-		System.out.println(finalNumber);
+		System.out.println(finalNum);
 	}
 }
