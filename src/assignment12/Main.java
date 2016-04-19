@@ -1,21 +1,18 @@
 //Bryan Racic
 //4/19/16
 //1045C
-//
+//Project Euler problem 30
 package assignment12;
 
 public class Main {
 	public static void main(String[] args) {
 		
 		Class01 class01 = new Class01();
-		int digit01 = 0;
-		int digit02 = 0;
-		int digit03 = 0;
-		int digit04 = 0;
-		int digit05 = 0;
-		int digit06 = 0;
+		int digit01, digit02, digit03, digit04, digit05, digit06 = 0;
+			//Declare and instantiate all digits on one line instead of 6
 		int testNum = 0;
 		int finalNum = 0;
+		
 		for (int i = 2; i < 1000000;i++){
 			digit01 = i - ((i / 10) * 10);
 			digit02 = (i / 10) % 10;
